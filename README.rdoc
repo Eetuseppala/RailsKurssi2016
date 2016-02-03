@@ -1,3 +1,3 @@
 Ruby on rails kurssi HY kevät 2016
 
-App on täällä: https://fierce-plateau-68475.herokuapp.com/breweries
+App on täällä: http://secure-mesa-34030.herokuapp.com/breweries
