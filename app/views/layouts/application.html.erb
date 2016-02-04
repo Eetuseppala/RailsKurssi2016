@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>Ratebeer</title>
@@ -10,6 +11,27 @@
   <div class="navibar">
     <%= link_to 'breweries', breweries_path %>
     <%= link_to 'beers', beers_path %>
+    <%= link_to 'ratings', ratings_path %>
+    <%= link_to 'users', users_path %>
+
+    <% if current_user %>
+        <%= link_to current_user.username, current_user %>
+        <%= link_to 'rate a beer', ratings_new_path %>
+        <%= link_to 'join a club', memberships_new_path %>
+        <%= link_to 'beerclubs', beer_clubs_path %>
+        <%= link_to 'sign out', signout_path, method: :delete %>
+
+    <% end %>
+
+    <% if not current_user %>
+        <%= link_to 'sign in', new_session_path %>
+        <%= link_to 'sign up', new_user_path %>
+    <% end %>
+
+    <% if current_user %>
+      <p>Signed in: <%= current_user.username %></p>
+    <% end %>
+
   </div>
 
   <%= yield %>
