@@ -1,3 +1,4 @@
+
 <%= form_for(@membership) do |f| %>
   <% if @membership.errors.any? %>
     <div id="error_explanation">
@@ -12,10 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.select :beer_club_id, options_from_collection_for_select(@beer_clubs, :id, :to_s) %>
-  </div>
-  <div class="field">
-    <%= f.select :user_id, options_from_collection_for_select(@users, :id, :to_s) %>
+    <%= f.select :beer_club_id, options_from_collection_for_select(@clubs, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

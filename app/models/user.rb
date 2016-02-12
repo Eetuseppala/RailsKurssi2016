@@ -1,22 +1,22 @@
 class User < ActiveRecord::Base
 	
-	include RatingAverage
+include RatingAverage
 
-	has_secure_password
-	
-	validates :username, uniqueness: true
-	validates :username, length: { in: 3..15 }
-	validates :password, length: { minimum: 4 }
-	validate :password_complexity
+  validates :username, uniqueness: true,
+                       length: { minimum: 3, maximum: 15 }
 
-	has_many :ratings, dependent: :destroy
-	has_many :memberships
+  validates :password, length: { minimum: 4 },
+                       format: {
+                          with: /\d.*[A-Z]|[A-Z].*\d/,
+                          message: "has to contain one number and one upper case letter"
+                       }
 
-	def password_complexity
-   		if (password =~ /[A-Z]/).blank? || (password =~ /[0-9]/).blank?
-    		errors.add(:password, "must contain an uppercase letter and a number.")
-    	end
-	end
+  has_many :ratings, dependent: :destroy
+  has_many :beers, through: :ratings
+  has_many :memberships
+  has_many :beer_clubs, through: :memberships
+
+  has_secure_password
 
 	def to_s
 		"#{self.username}"
