@@ -19,7 +19,6 @@ describe "Breweries page" do
 
     breweries.each do |brewery_name|
       expect(page).to have_content brewery_name
-    end
-    
+    end 
   end
 end
