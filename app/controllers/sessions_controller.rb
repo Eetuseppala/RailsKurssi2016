@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to user_path(user), notice: "Welcome back!"
       else
-        redirect_to :back, notice: "Username and/or password mismatch"
+        redirect_to :back, notice: "Username and password do not match"
       end
     end
 

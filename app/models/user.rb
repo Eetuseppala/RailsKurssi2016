@@ -21,4 +21,10 @@ include RatingAverage
 	def to_s
 		"#{self.username}"
 	end
+
+  def favorite_beer
+    return nil if ratings.empty?   # palautetaan nil jos reittauksia ei ole
+    ratings.order(score: :desc).limit(1).first.beer
+  end
+
 end
