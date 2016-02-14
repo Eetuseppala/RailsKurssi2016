@@ -1,6 +1,6 @@
 Ruby on rails kurssi HY kevät 2016
 
-App on täällä: http://secure-mesa-34030.herokuapp.com/breweries
+App on täällä: https://eetuseppalarails2016.herokuapp.com
 
 [![Build Status](https://travis-ci.org/Eetuseppala/RailsKurssi2016.png)](https://travis-ci.org/Eetuseppala/RailsKurssi2016)
 
