@@ -1,10 +1,15 @@
 language: ruby
-
 rvm:
- - 2.1.8
-
+- 2.1.8
 script:
- - bundle exec rake db:migrate --trace
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake db:test:prepare
- - bundle exec rspec -fd spec/
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -fd spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ns2l0GkErHvX3VberejB9FvkEtW5aQnLXWUn0hc+VzG8CS6lFTVk8VXbTzdd0JZokezzFO0u5qP925DzPaWihvYF0R36+C/MJ3yR8+7RQcKNTtfrgpB2e4yXlzIltJs++vqRKBiz4xQCu/7xkdPgXTdHJQPyHZZ+v++N4GTLZD0BNXZJibNINNuYBvX4pmz9knA9oJHCg6lzpSGGF1cYqOT7u+Zh1Krfc2CAnMplb6WRSk78h399n4QNrEXJQk91Lrza+M5I49qQc5ziQDGsMXUNO5DwSGQpkXCG5LFZzra9+S8uN83WywVr0D2u4Z0kp5KSCV6mEeTtYcKiHhclZi+AshIqJDMDzgAvI1d07ZauhMqf4gLGDPLpvcGIs8S1e7fYae7JTdR6icwWbnDBnBJyDE4VB1gF9aufZI+3jETx8VehJjSWbCXRPXaWBLIZolu0E2kywHN0Gcy6MXjdm+LXZ3v0u/GxgemwtEkErM3G7KJSwd/Riu8H/y2wC4kz+BGX7H7uVpEdISaL8MUHqhVRqWBMMYuUQPtWQGgN645aIWcM9d1wyV9iZSpSj/UTjUPVVE4N69TePmFzp30QPbRaIPf+siPmohPxEcxMCEdVItpd+DguWLVyznl2DHgNSrzgJmAgZBZXAjSzSGoMhlPB+oKCQByHXyLTf2aPznA=
+  app: RailsKurssi2016
+  on:
+    repo: Eetuseppala/RailsKurssi2016
