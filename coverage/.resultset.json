@@ -114,6 +114,32 @@
         2,
         null,
         null,
+        1,
+        5,
+        null,
+        8,
+        8,
+        null,
+        null,
+        1,
+        5,
+        null,
+        8,
+        8,
+        null,
+        null,
+        1,
+        null,
+        1,
+        8,
+        4,
+        null,
+        null,
+        1,
+        8,
+        4,
+        null,
+        null,
         null
       ],
       "C:/Sites/RailsKurssi2016/app/controllers/sessions_controller.rb": [
@@ -607,6 +633,6 @@
         0
       ]
     },
-    "timestamp": 1455471345
+    "timestamp": 1455804034
   }
 }

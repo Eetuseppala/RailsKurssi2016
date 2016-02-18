@@ -9,6 +9,12 @@
   Has made <%= pluralize(@user.ratings.count, 'rating') %>
 </p>
 
+<% if @user.ratings.any? %>
+  <p>Favorite style: <%= @user.favorite_style %></p>
+
+  <p>Favorite brewery: <%= @user.favorite_brewery.name %></p>
+<% end %>
+
 <% if @user.beer_clubs.any? %>
   <p>
     Member of

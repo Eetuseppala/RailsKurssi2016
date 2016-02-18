@@ -76,6 +76,8 @@ describe "User" do
       click_button('Create User')
     }.to change{User.count}.by(1)
   end
+
+  
 end
 
 def confirm_dialog
