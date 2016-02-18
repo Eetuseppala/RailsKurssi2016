@@ -176,7 +176,7 @@
         1,
         null,
         1,
-        79,
+        85,
         65,
         null,
         null,
@@ -448,6 +448,53 @@
         null,
         null
       ],
+      "C:/Sites/RailsKurssi2016/lib/beermapping_api.rb": [
+        1,
+        1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "C:/Sites/RailsKurssi2016/app/models/place.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        6,
+        null,
+        null
+      ],
+      "C:/Sites/RailsKurssi2016/app/controllers/places_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        3,
+        3,
+        1,
+        null,
+        2,
+        null,
+        null,
+        null
+      ],
       "C:/Sites/RailsKurssi2016/app/controllers/ratings_controller.rb": [
         1,
         1,
@@ -633,6 +680,6 @@
         0
       ]
     },
-    "timestamp": 1455804034
+    "timestamp": 1455810521
   }
 }
