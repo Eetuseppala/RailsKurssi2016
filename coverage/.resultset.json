@@ -451,21 +451,21 @@
       "C:/Sites/RailsKurssi2016/lib/beermapping_api.rb": [
         1,
         1,
-        0,
+        2,
         null,
-        0,
-        0,
+        2,
+        2,
         null,
-        0,
+        1,
         null,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null,
         null,
         1,
-        0,
+        2,
         null,
         null
       ],
@@ -680,6 +680,6 @@
         0
       ]
     },
-    "timestamp": 1455810521
+    "timestamp": 1456053881
   }
 }

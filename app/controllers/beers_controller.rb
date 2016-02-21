@@ -12,27 +12,30 @@ class BeersController < ApplicationController
   # GET /beers/1
   # GET /beers/1.json
   def show
+    @rating = Rating.new
+    @rating.beer = @beer
   end
 
   # GET /beers/new
  def new
    @beer = Beer.new
    @breweries = Brewery.all
-   @styles = ["Weizen", "Witbier", "Lager", "Pale ale", "IPA", "Porter"]
+   @styles = Style.all
  end
 
 
   # GET /beers/1/edit
   def edit
     @breweries = Brewery.all
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    @styles = Style.all
   end
 
   # POST /beers
   # POST /beers.json
   def create
     @beer = Beer.new(beer_params)
-    @breweries = Brewery.all 
+    @breweries = Brewery.all
+    @styles = Style.all
 
     respond_to do |format|
       if @beer.save
@@ -40,7 +43,7 @@ class BeersController < ApplicationController
         format.json { render :show, status: :created, location: @beer }
       else
         @breweries = Brewery.all
-        @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+        @styles = Style.all
         format.html { render :new }
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
@@ -79,6 +82,6 @@ class BeersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
-      params.require(:beer).permit(:name, :style, :brewery_id)
+      params.require(:beer).permit(:name, :style_id, :brewery_id)
     end
 end

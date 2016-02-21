@@ -28,5 +28,25 @@
 
 <% end %>
 
+<% if current_user && eligible_to_join(@beer_club) %>
+
+    <%= form_for(@membership) do |f| %>
+    <%= f.hidden_field :beer_club_id %>
+    <%= f.submit value:"Join this club!" %>
+    <% end %>
+
+<% end %>
+
+
+<% if current_user && !eligible_to_join(@beer_club) %>
+
+    <%= form_for(@membership, method: "delete") do |f| %>
+    <%= f.hidden_field :beer_club_id %>
+    <%= f.submit value: "Resign from this club" %>
+    <% end %>
+
+<% end %>
+
+<br>
 <%= link_to 'Edit', edit_beer_club_path(@beer_club) %> |
 <%= link_to 'Back', beer_clubs_path %>
