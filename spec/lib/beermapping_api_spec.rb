@@ -19,6 +19,14 @@ describe "BeermappingApi" do
 
   it "When HTTP GET returns no entries, no entries are parsed or returned" do
 
+    canned_answer = <<-END_OF_STRING
+    <?xml version='1.0' encoding='utf-8' ?><bmp_locations><location><id></id><name><
+/name><status></status><reviewlink></reviewlink><proxylink></proxylink><blogmap>
+</blogmap><street></street><city></city><state></state><zip></zip><country></cou
+ntry><phone></phone><overall></overall><imagecount></imagecount></location></bmp
+_locations>
+END_OF_STRING
+
     stub_request(:get, /.*kouvola/).to_return(body: nil, headers: { 'Content-Type' => "text/xml" })
 
     places = BeermappingApi.places_in("kouvola")
