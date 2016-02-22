@@ -14,9 +14,7 @@
     </thead>
     <% @places.each do |place| %>
       <tr>
-        <% Place.rendered_fields.each do |f| %>
-          <td><%= place.send(f) %></td>
-        <% end %>
+        <td><%= link_to place.name %></td>
       </tr>
     <% end %>
   </table>
