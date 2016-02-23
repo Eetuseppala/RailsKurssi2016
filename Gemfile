@@ -74,3 +74,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
+
