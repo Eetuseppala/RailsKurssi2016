@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   resources :beers
   resources :breweries
   resources :ratings, only: [:index, :new, :create, :destroy]
+  resources :places, only:[:index, :show]
+# mikä generoi samat polut kuin seuraavat kaksi
+# get 'places', to:'places#index'
+# get 'places/:id', to:'places#show'
 
   root 'breweries#index'
 

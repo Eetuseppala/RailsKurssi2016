@@ -1,3 +1,4 @@
+
 class Place
   include ActiveModel::Model
 
@@ -5,5 +6,10 @@ class Place
 
   def self.rendered_fields
     [:id, :name, :status, :street, :city, :zip, :country, :overall ]
+  end
+
+  def map_url
+    return blogmap gsub("http", "https") if Rails.env.production?
+    blogmap
   end
 end
